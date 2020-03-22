@@ -9,7 +9,8 @@ class SignIn extends Component {
 
     this.state = {
       email: '',
-      password: ''
+      password: '',
+      admin: false
     }
   }
 
@@ -21,11 +22,17 @@ class SignIn extends Component {
     event.preventDefault()
 
     const { alert, history, setUser } = this.props
-
     signIn(this.state)
-      .then(res => setUser(res.data.user))
+      .then(res => {
+        setUser(res.data.user)
+      this.setState({admin: res.data.user.admin})
+      if (this.state.admin) // When the user is admin
+      {history.push(`/actions`) } 
+      else // when the user is regular user
+      {history.push('/')}
+      })
       .then(() => alert(messages.signInSuccess, 'success'))
-      .then(() => history.push('/'))
+      // .then(() => {}) // history.push('/')
       .catch(error => {
         console.error(error)
         this.setState({ email: '', password: '' })

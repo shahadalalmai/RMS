@@ -17,6 +17,9 @@ import ReportCreate from "./reports/components/reportCreate";
 import ReportUpdate from "./reports/components/reportUpdate";
 import UsersIndex from "./users/components/usersIndex";
 import UsersUpdate from "./users/components/usersUpdate";
+import GroupIndex from "./groups/components/groupsIndex";
+import GroupUpdate from "./groups/components/groupUpdate";
+import GroupCreate from "./groups/components/groupCreate";
 
 // I need a script to disappear the alerts after 5 sec
 
@@ -94,7 +97,16 @@ class App extends Component {
             <UsersIndex user={user} />) }/>
 
           <AuthenticatedRoute user={user} path="/users/edit/:id" render={ () => ( 
-            <UsersUpdate user={user} />) }/>   
+            <UsersUpdate user={user} />) }/>
+
+          <AuthenticatedRoute user={user} path="/groups" exact render={ () => ( 
+            <GroupIndex user={user} />) }/>
+
+          <AuthenticatedRoute user={user} path="/groups/edit/:id" exact render={ () => ( 
+            <GroupUpdate user={user} />) }/>
+
+          <AuthenticatedRoute user={user} path="/group/new" exact render={ () => ( 
+            <GroupCreate user={user} />) }/>       
 
         </main>
 

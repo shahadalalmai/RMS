@@ -43,7 +43,7 @@ class ReportsIndex extends Component {
     render() { 
         return (   
             <div className="intro-img" style={{marginTop:"10%", marginBottom:"10%"}}> 
-                <h1 style={{paddingBottom: "2%", color: "#717070"}}>Reports</h1>
+                <h1 style={{paddingBottom: "2%", color: "#717070"}}>System Reports</h1>
                 <h3 style={{color: "orange", textAlign: "left"}}>Add a New Report <Link to={`/report/new`}><img src={add} height="60px"  width="60px" alt="add"></img></Link></h3> 
                 <Table striped bordered hover>
                     <thead>
@@ -57,7 +57,7 @@ class ReportsIndex extends Component {
                     </thead> 
                     <tbody>
                         {this.state.reports.map( (report, index) => (
-                            <tr>
+                            <tr key={index}>
                                 <td>{index+1}</td>
                                 <td><p style={{paddingTop: "20px"}}>{report.name}</p></td>
                                 <td><Link to={`/reports/${report._id}`}><img src={show} height="60px"  width="60px" alt="show"></img></Link>
