@@ -41,6 +41,7 @@ class SignUp extends Component {
     const { name, email, password, passwordConfirmation } = this.state
 
     return (
+      <div className="intro-img" style={{marginTop:"10%", marginBottom:"10%"}}>
       <form className='auth-form' onSubmit={this.onSignUp}>
         <h3>Sign Up</h3>
         <label htmlFor="name">Name</label>
@@ -80,8 +81,14 @@ class SignUp extends Component {
           placeholder="Confirm Password"
           onChange={this.handleChange}
         />
+        <label>User Role: </label>
+          <select name="admin" value={this.state.admin} onChange={this.handleChange}>
+                  <option value="true">Admin User</option>
+                  <option value="false">Regular User</option>
+          </select> <br/>
         <button type="submit">Sign Up</button>
       </form>
+      </div>
     )
   }
 }

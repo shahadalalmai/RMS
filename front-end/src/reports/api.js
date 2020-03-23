@@ -11,6 +11,16 @@ export const index = (user) => {
     })
 }
 
+export const all = (user) => {
+    return axios({
+        url:apiUrl + "/all-reports",
+        method: "get",
+        headers: {
+            "Authorization": `Bearer ${user.token}` 
+        }
+    })
+}
+
 export const show = (user, id) => {
     return axios({
         url:apiUrl + "/reports/" +id,

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { index, destroy } from "../api";
+import { all, destroy } from "../api";
 import { Link , withRouter} from 'react-router-dom'
 import Table from 'react-bootstrap/Table'
 import show from "../../images/checked.svg"
@@ -9,14 +9,14 @@ import add from "../../images/new.svg";
 
 
 
-class ReportsIndex extends Component {
+class AllReportsAdmin extends Component {
     state = { 
         reports: []
      }
 
     componentDidMount(){
         const user = this.props.user
-        index(user) // excuting the api
+        all(user) // excuting the api
         .then( (response) => {
             const reports = response.data.reports
             this.setState({
@@ -43,13 +43,14 @@ class ReportsIndex extends Component {
     render() { 
         return (   
             <div className="intro-img" style={{marginTop:"10%", marginBottom:"10%"}}> 
-                <h1 style={{paddingBottom: "2%", color: "#717070"}}>Your Reports</h1>
+                <h1 style={{paddingBottom: "2%", color: "#717070"}}>System Reports</h1>
                 <h3 style={{color: "orange", textAlign: "left"}}>Add a New Report <Link to={`/report/new`}><img src={add} height="60px"  width="60px" alt="add"></img></Link></h3> 
                 <Table striped bordered hover>
                     <thead>
                     <tr>
                         <th>#</th>
                         <th>Report Title</th>
+                        <th>Created By User ID</th>
                         <th>Show</th>
                         <th>Edit</th>
                         <th>Delete</th>
@@ -60,6 +61,7 @@ class ReportsIndex extends Component {
                             <tr key={index}>
                                 <td>{index+1}</td>
                                 <td><p style={{paddingTop: "20px"}}>{report.name}</p></td>
+                                <td><p style={{paddingTop: "20px"}}>{report.owner}</p></td>
                                 <td><Link to={`/reports/${report._id}`}><img src={show} height="60px"  width="60px" alt="show"></img></Link>
                                 </td> 
                                 <td>
@@ -74,4 +76,4 @@ class ReportsIndex extends Component {
                         }
 } // end class
  
-export default withRouter(ReportsIndex)
+export default withRouter(AllReportsAdmin)

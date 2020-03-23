@@ -15,6 +15,7 @@ import ReportsIndex from "./reports/components/reportsIndex";
 import ReportShow from "./reports/components/reportShow";
 import ReportCreate from "./reports/components/reportCreate";
 import ReportUpdate from "./reports/components/reportUpdate";
+import AllReportsAdmin from "./reports/components/allReportsAdmin";
 import UsersIndex from "./users/components/usersIndex";
 import UsersUpdate from "./users/components/usersUpdate";
 import GroupIndex from "./groups/components/groupsIndex";
@@ -48,6 +49,7 @@ class App extends Component {
     return (
       <React.Fragment>
         <Header user={user} />
+
         {alerts.map((alert, index) => (
           <AlertDismissible key={index} variant={alert.type} message={alert.message} />
         ))}
@@ -60,11 +62,11 @@ class App extends Component {
             )}/>
 
         <main className="container">
-          {/* <Route path='/sign-up' render={() => (
-            <SignUp alert={this.alert} setUser={this.setUser} /> )} /> */}
+          <Route path='/sign-up' render={() => (
+            <SignUp alert={this.alert} setUser={this.setUser} /> )} />
 
-          <AuthenticatedRoute user={user}  path='/sign-up' render={() => (
-            <SignUp alert={this.alert} setUser={this.setUser} /> )} />  
+          {/* <AuthenticatedRoute user={user}  path='/sign-up' render={() => (
+            <SignUp alert={this.alert} setUser={this.setUser} /> )} />   */}
 
           <Route path='/sign-in' render={() => (
             <SignIn alert={this.alert} setUser={this.setUser} /> )} />
@@ -83,6 +85,9 @@ class App extends Component {
 
           <AuthenticatedRoute user={user} path="/reports" exact render={ () => ( 
             <ReportsIndex user={user} />) }/>
+
+          <AuthenticatedRoute user={user} path="/all-reports" exact render={ () => ( 
+            <AllReportsAdmin user={user} />) }/>
           
           <AuthenticatedRoute user={user} path="/report/new" exact render={ () => ( 
             <ReportCreate user={user} />) }/>

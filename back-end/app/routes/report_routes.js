@@ -23,6 +23,17 @@ router.get('/reports', requireToken, (req, res, next) => { // the next middlewar
     .catch(next)
 })
 
+// index all reports
+router.get('/all-reports', requireToken, (req, res, next) => { // the next middleware plz
+    const admin = req.user.admin
+    if (admin)
+    ReportModel.find() // fetching all resource for admin user
+    .then( reports => {
+        res.status(200).json({reports: reports})
+    })
+    .catch(next)
+})
+
 
 // show single report
 router.get('/reports/:id', requireToken, (req, res, next) => {
