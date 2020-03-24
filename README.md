@@ -31,6 +31,8 @@ The system includes an authentication capability as well as all the components a
 
 ## System Screenshots:
 ![Landing Page](https://drive.google.com/open?id=1I2DRrR1DHUlnsU-e_hbRvS27YJSM3G23)
+#### Landing Page:
+<img src="screenshots/1.landing-page.png" width="600" height="400" />
 
 
 ## [License](LICENSE)
