@@ -30,9 +30,30 @@ The system includes an authentication capability as well as all the components a
 **NOTE**: A ready made template by GA for both front-end and back-end was utalized to develop this system.
 
 ## System Screenshots:
-![Landing Page](https://drive.google.com/open?id=1I2DRrR1DHUlnsU-e_hbRvS27YJSM3G23)
+
 #### Landing Page:
-<img src="screenshots/1.landing-page.png" width="600" height="400" />
+<img src="screenshots/1.landing-page.png" width="700" height="400" />
+
+#### Regular User Reports:
+<img src="screenshots/2.regular-user-reports.png" width="700" height="400" />
+
+#### User Profile:
+<img src="screenshots/3.profile.png" width="700" height="400" />
+
+#### Admin User Landing Page:
+<img src="screenshots/4.admin-user-landing-page.png" width="700" height="400" />
+
+#### Manage System Reports:
+<img src="screenshots/5.manage-system-reports.png" width="700" height="400" />
+
+#### Manage System Groups:
+<img src="screenshots/6.manage-system-groups.png" width="700" height="400" />
+
+#### Manage System Users:
+<img src="screenshots/7.manage-system-users.png" width="700" height="400" />
+
+#### Sign-Up a User:
+<img src="screenshots/8.sign-up-a-user.png" width="700" height="400" />
 
 
 ## [License](LICENSE)
