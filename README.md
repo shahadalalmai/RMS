@@ -30,7 +30,7 @@ The system includes an authentication capability as well as all the components a
 **NOTE**: A ready made template by GA for both front-end and back-end was utalized to develop this system.
 
 ## System Screenshots:
-
+![Landing Page](https://drive.google.com/open?id=1I2DRrR1DHUlnsU-e_hbRvS27YJSM3G23)
 
 
 ## [License](LICENSE)
