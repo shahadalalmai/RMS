@@ -18,17 +18,6 @@ The system includes an authentication capability as well as all the components a
 1. MongoDB for database.
 1. Axios for Ajax API.
 
-
-## To Run This System:
-
-1.  Run `npm install` in both front-end and back-end.
-2.  Install and run MongoDB server [see docs] (https://docs.mongodb.com/manual/reference/program/mongo/).
-3.  Run `npm start` in both front-end and back-end.
-4.  Now you are ready to use the system.
-
-
-**NOTE**: A ready made template by GA for both front-end and back-end was utalized to develop this system.
-
 ## System Screenshots:
 
 #### Landing Page:
